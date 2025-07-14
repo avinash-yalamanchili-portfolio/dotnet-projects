@@ -1,0 +1,48 @@
+# .NET Build artifacts
+bin/
+obj/
+out/
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+.history/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+
+# Packages
+packages/
+*.nupkg
+*.snupkg
+
+# Entity Framework
+Migrations/
+
+# Environment files
+.env
+.env.*
+
+# Azure
+*.azurewebsites.net.publishsettings
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Publish folder
+publish/

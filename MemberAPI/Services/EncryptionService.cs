@@ -21,18 +21,18 @@ namespace MemberAPI.Services
         public string Encrypt(string plainText)
         {
             using var aes = Aes.Create();
+            aes.Mode = CipherMode.CBC;
             aes.Key = key;
             aes.GenerateIV();
 
             var encryptor = aes.CreateEncryptor();
 
             using var ms = new MemoryStream();
-            ms.Write(aes.IV, 0, aes.IV.Length);
 
             using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
             using (var sw = new StreamWriter(cs))
             {
-                sw.Write(plainText);
+                sw.Write(plainText.ToString());
             }
 
             return Convert.ToBase64String(ms.ToArray());
